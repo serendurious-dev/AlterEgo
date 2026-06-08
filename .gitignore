@@ -23,6 +23,10 @@ alterego_daemon.log
 *.lock
 *.tmp
 
+# Personal demo / recording notes (keep these local, not on GitHub)
+DEMO_NARRATION.md
+DEMO_SCRIPT.md
+
 # Editor / OS
 .vscode/
 .idea/
