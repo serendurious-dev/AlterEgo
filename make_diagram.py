@@ -1,4 +1,4 @@
-"""Generates a clean, horizontal architecture diagram PNG for the AlterEgo Agent."""
+"""Generates a clean, horizontal system-architecture diagram for the AlterEgo Agent."""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
