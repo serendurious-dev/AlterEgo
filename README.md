@@ -100,47 +100,13 @@ the state audit.
 
 ## System diagram
 
-```
-                          +-----------------------------+
-                          |             YOU             |
-                          +--------------+--------------+
-                                         |
-                    +--------------------+--------------------+
-                    |                                         |
-            +-------v--------+                       +--------v-------+
-            |  Desktop GUI   |                       | Terminal / CLI |
-            | alterego_gui.py|                       |  alterego.py   |
-            +-------+--------+                       +--------+-------+
-                    |                                         |
-                    +--------------------+--------------------+
-                                         |
-                          +--------------v--------------+
-                          |     CORE AGENT (alterego)   |
-                          |  Observe > Think > Act >    |
-                          |  Evolve  (the 6-phase loop) |
-                          +------+---------------+------+
-              logic layer        |               |        OS layer
-        +----------------------- v ---+   +------ v --------------------+
-        |  features   coaching        |   |  osutil.py                  |
-        |  game       wisdom          |   |  FileLock (mutex)           |
-        |  analytics, the brain,      |   |  atomic_write_text          |
-        |  the fun, the philosophy    |   |  notify, logger             |
-        +-------------+---------------+   +--------------+--------------+
-                      |                                  |
-                      |        +-------------------------+
-                      v        v
-            +---------------------------------+
-            |   DATA  (guarded by the lock    |
-            |   and atomic writes)            |
-            |   profile.json    log.csv       |
-            +----------------+----------------+
-                             |  shared files = IPC channel
-            +----------------v----------------+
-            |  REMINDER DAEMON  (own process) |
-            |  heartbeat + stop-flag + PID    |
-            |  signals, native notifications  |
-            +---------------------------------+
-```
+![AlterEgo Agent system architecture](alterego_architecture.png)
+
+The app and a background daemon are two separate processes that coordinate
+through shared files. The interface layer (GUI and CLI) only renders. The core
+agent runs the daily loop. The logic modules handle the thinking and the OS
+layer handles the locking, atomic writes, signals, and notifications. Every read
+and write to the data files goes through the lock and the atomic writer.
 
 ---
 
