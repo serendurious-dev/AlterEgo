@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# AlterEgo runtime data (personal, generated at runtime, not source)
+alterego_profile.json
+alterego_profile.json.corrupt
+alterego_log.csv
+alterego_events.log
+alterego_intentions.json
+alterego_trend.png
+alterego_heatmap.png
+alterego_scorecard_*.txt
+alterego_letter_*.txt
+alterego_backup_*.zip
+alterego_daemon.pid
+alterego_daemon.status
+alterego_daemon.stop
+alterego_daemon.log
+*.lock
+*.tmp
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

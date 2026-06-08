@@ -1,0 +1,7 @@
+# The agent, persona engine, analytics, badges, backups and hashing all use
+# only the standard library. These two are just for the front-end extras:
+#   customtkinter : the desktop window (alterego_gui.py)
+#   matplotlib    : the charts (trend, mood arc, heatmap); terminal falls back to ASCII
+
+customtkinter>=5.2
+matplotlib>=3.5 ; python_version >= "3.8"
