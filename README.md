@@ -208,7 +208,7 @@ control files) are created at runtime and are not part of the source. They are i
 
 ## License
 
-MIT. Do whatever you want with it, just keep the copyright notice. See
+MIT. See
 [LICENSE](LICENSE).
 
 ---
